@@ -61,3 +61,16 @@ class ArchivoCSV:
         print(self.df[nombre].head())
         print(self.df[nombre].describe())
         return self.df[nombre]
+
+def pedir_entero(mensaje, minimo, maximo):
+    while True:
+        texto = input(mensaje)
+        try:
+            valor = int(texto)
+        except ValueError:
+            print("Debes escribir un numero entero.")
+            continue
+        if valor < minimo or valor > maximo:
+            print("El numero debe estar entre " + str(minimo) + " y " + str(maximo) + ".")
+            continue
+        return valor
