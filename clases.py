@@ -47,3 +47,17 @@ class ArchivoCSV:
         nombre = "grafico_condicion" + str(condicion) + ".png"
         fig.savefig(nombre, dpi=150)
         plt.show()
+
+    def diferencia_interhemisferica(self, canal_izq, canal_der):
+        canales = [c for c in self.df.columns if c not in ("subject", "condition")]
+        for canal in (canal_izq, canal_der):
+            if canal not in canales:
+                raise ValueError("El canal " + canal + " no existe. Canales: " + str(canales))
+
+        nombre = canal_izq + "-" + canal_der
+        self.df[nombre] = self.df[canal_izq] - self.df[canal_der]
+
+        print("Nueva columna creada: " + nombre + " (µV)")
+        print(self.df[nombre].head())
+        print(self.df[nombre].describe())
+        return self.df[nombre]
