@@ -24,3 +24,12 @@ Sistema de monitoreo neurológico desarrollado en Python.
 - Pandas
 - SciPy
 - Matplotlib
+
+## Ejecución
+
+1. Abrir la carpeta del proyecto en Visual Studio Code.
+2. Abrir una terminal en la carpeta del proyecto.
+3. Ejecutar:
+
+```bash
+python main.py
