@@ -1,2 +1,2 @@
-Arch_CSV/
 __pycache__/
+*.pyc
